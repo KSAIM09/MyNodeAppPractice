@@ -45,3 +45,20 @@ nav a{
     font-weight: 600;
 
 }
+#btn{
+    margin-top: 30px;
+}
+#btn a{
+    text-decoration: none;
+    color: white;
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: #353535;
+    border-radius: 5px;
+}
+
+#btn a:hover{
+    background-color: #222222;
+}

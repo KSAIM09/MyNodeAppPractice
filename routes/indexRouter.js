@@ -4,11 +4,20 @@ const User = require('../models/userSchema')
 
 
 // Routes
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     // res.send("HomePage"); We can render a page also
 
     // this will render ejs page!
-    res.render('index');   
+    // res.render('index');   
+
+    // we will add some data to front back from out database
+    try {
+        const users = await User.find().select("+password")
+        // .select("+password")--will show password also if we want to otherwise dont write it
+        res.render('index', { users: users });
+    } catch (error) {
+        res.status(500).send("Check Your DATABASE", error.message);
+    }
 });
 
 router.get('/create', (req, res) => {
@@ -35,6 +44,16 @@ router.post('/save', async(req, res) => {
     }
 })
 
+
+// To delete The Data using (anchor tag) get method
+router.get("/delete/:id", async (req, res) => {
+    try {
+        await User.findByIdAndDelete(req.params.id);
+        res.redirect('/success');
+    } catch (error) {
+        res.status(500).send("Check Your DATABASE",error.message)
+    }
+})
 
 
 

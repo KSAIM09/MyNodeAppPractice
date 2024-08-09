@@ -45,3 +45,48 @@ nav a{
     font-weight: 600;
 
 }
+
+ul{
+    margin-top: 30px;
+    border: 1px solid white;
+    width: 600px;
+    padding: 30px;
+    border-radius: 20px;
+}
+ul h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#user-dets{
+    margin-bottom: 30px;
+    position: relative;
+}
+#user-dets a{
+    text-decoration: none;
+    position: absolute;
+    right: 0.5%;
+    top: 4.5%;
+    padding: 5px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: none;
+    
+}
+
+#user-dets a:hover{
+    background-color: #252525;
+}
+
+li{
+    /* border: 1px solid white; */
+    padding: 10px 20px;
+    background-color: #353535;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+li:hover{
+    background-color: #252525;
+}
