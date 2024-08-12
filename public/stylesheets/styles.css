@@ -62,7 +62,19 @@ ul h3{
     margin-bottom: 30px;
     position: relative;
 }
-#user-dets a{
+#user-dets #del{
+    text-decoration: none;
+    position: absolute;
+    right: 8%;
+    top: 4.5%;
+    padding: 5px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: none;
+    
+}
+
+#user-dets #update{
     text-decoration: none;
     position: absolute;
     right: 0.5%;

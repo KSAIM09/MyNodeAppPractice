@@ -55,6 +55,29 @@ router.get("/delete/:id", async (req, res) => {
     }
 })
 
+// To update the User's details we make Two new routes 1st for getting the details and showing,
+// 2nd to update that detials
+
+// 1st
+router.get("/update/:id", async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id).select("+password");
+        res.render('update', { user: user });
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+});
+
+// 2nd
+router.post("/update/:id", async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect('/success');
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+});
+
 
 
 module.exports = router;
