@@ -85,7 +85,17 @@ ul h3{
     border: none;
     
 }
-
+#user-dets #create-post{
+    text-decoration: none;
+    position: absolute;
+    right: 15.5%;
+    top: 4.5%;
+    padding: 5px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    border: none;
+    
+}
 #user-dets a:hover{
     background-color: #252525;
 }

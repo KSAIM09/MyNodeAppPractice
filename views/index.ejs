@@ -17,6 +17,7 @@
             <div id="user-dets">
                 <a id="del" href="/delete/<%= user._id %>">❌</a>
                 <a id="update" href="/update/<%= user._id%>">✏️</a>
+                <a id="create-post" href="/post/create/<%= user._id%>">➕</a>
                 <li>User Name: <%= user.name %></li>
                 <li>User Email: <%= user.email %></li>
             </div>

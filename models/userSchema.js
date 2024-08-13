@@ -31,8 +31,10 @@ const userSchema = new mongoose.Schema({
         minLength: [6, "Password must be at least 6 characters long"],
         maxLength: [12, "Password must not be more than 12 characters long"],
         select: false,
-    }
-});
+    },
+    posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "post" }],
+}, { timestamps: true });
+
 
 const User = mongoose.model("user", userSchema);
 module.exports = User;

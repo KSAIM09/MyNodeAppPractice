@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create User</title>
+    <link rel="stylesheet" href="/stylesheets/create.styles.css">
+</head>
+<body>
+    <%- include("nav")%>
+    <h1>Create User Here!</h1>
+
+    <div class="user-form">
+        <form action="/post/create/<%= userid%>" method="post">
+            
+            <input type="text" id="name" name="title" required placeholder="Post Title">
+            <br>
+            
+            <textarea name="description" placeholder="Enter description..."></textarea>
+            <br>
+            <br>
+            <button type="submit">Create Post</button>
+        </form>
+    </div>
+
+</body>
+</html>

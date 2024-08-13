@@ -4,8 +4,12 @@ dotenv.config({ path: "./.env"});
 
 const express = require("express");
 const app = express();
+
 const indexRouter = require('./routes/indexRouter');
+const postRoute = require('./routes/postRoute');
+
 const path = require("path");
+
 
 
 // EJS
@@ -23,6 +27,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.use("/", indexRouter);
+// Post Route
+app.use("/post", postRoute);
 
 
 // Server listen
