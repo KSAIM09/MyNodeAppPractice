@@ -21,9 +21,19 @@
                 <li>User Name: <%= user.name %></li>
                 <li>User Email: <%= user.email %></li>
             </div>
-            
-            
        <% }) %>
+    </ul>
+
+    <ul>
+        <% posts.forEach(post => { %>
+            <h3>User's Post</h3>
+            <div class="posts" id="user-dets">
+                <li>Created By: <%= post.user.name %> | <%= post.title %></li>
+                <li>Description: <%= post.description %></li>
+                <a id="del" href="/post/delete/<%= post._id%>">❌</a>
+                <a id="update" href="/post/update/<%= post._id%>">✏️</a>
+            </div>
+        <% }) %>
     </ul>
     
 </body>

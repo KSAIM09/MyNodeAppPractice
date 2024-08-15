@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const User = require('../models/userSchema')
+const User = require('../models/userSchema');
+const Post = require('../models/postSchema');
 
 
 // Routes
@@ -14,7 +15,9 @@ router.get('/', async (req, res) => {
     try {
         const users = await User.find().select("+password")
         // .select("+password")--will show password also if we want to otherwise dont write it
-        res.render('index', { users: users });
+        // Now we also add Posts on home page using Pipline
+        const posts = await Post.find().populate('user');
+        res.render('index', { users: users, posts: posts });
     } catch (error) {
         res.status(500).send("Check Your DATABASE", error.message);
     }
